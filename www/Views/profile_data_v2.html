@@ -1,0 +1,42 @@
+<div class="profile-data">
+    <div class="animation"></div>
+    <div class="background"> 
+        <img class="svgcontent"src="/CV_App_4C/www/img/test.svg" alt="">
+    </div>
+    <div class="bg mt-8">
+
+        <div class="w-100 description">
+            <div class="my-3">
+                <div class="song-container">
+                    <div class="song" style="display: flex;">
+                    <img class="song-img rounded"src="/CV_App_4C/www/img/prof_imgs/FOLKLORE.jpg" alt="Cancion :3" class="bg-light">
+                    <div class="song-name align-self-center">
+                        <h2>Seven</h2>
+                        <h6>Taylor Swift</h6>
+                    </div>
+                    <div class="song-info align-self-center">
+                        <i class="bi bi-three-dots-vertical" style="color:white; font-size:25px"></i>
+                    </div>
+                </div>
+                </div>
+                <div class="actions px-4" style="padding-top: 1.5rem;">
+                    <a href="#" class="btn btn-primary btn-md active" role="button" aria-pressed="true">Add<i class="bi bi-person-fill-add"></i></a>
+                    <a id="cookiebttn" class="btn btn-secondary btn-md active" role="button" aria-pressed="true">Give a cookie<i class="bi bi-cookie"></i></a>
+                </div>
+                <div class="px-4"style="padding-top: 1.5rem">
+                <p class="text-white separate-bttm separate-top">Hello, I'm Carlos Enrique Gongora Escalona, I'm 19 years old, and this text is a description and the text below is a funny phrase:</p>
+                </div>
+                <div class="px-4">
+                <p class="text-white">The first rule of the fight club is have fun and be yourself :D</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>// Asociar la función al clic del botón
+    $(document).ready(function() {
+        $('#cookiebttn').on('click', function(event) {
+            event.preventDefault(); // Evitar la acción predeterminada del enlace
+            loadPartialViewWithDelay('Modules/cookies', '.animation');
+        });
+    });</script>

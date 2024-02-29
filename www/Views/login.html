@@ -1,0 +1,48 @@
+<div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+data-sidebar-position="fixed" data-header-position="fixed">
+<div
+  class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
+  <div class="d-flex align-items-center justify-content-center w-100">
+    <div class="row justify-content-center w-100">
+      <div class="col-md-8 col-lg-6 col-xxl-3">
+        <div class="card mb-0">
+          <div class="card-body">
+            <a class="text-nowrap logo-img text-center d-block py-3 w-100" style="margin-bottom: 20px;">
+              <img src="img/Picture1.png" style="width:30%" alt="">
+            </a>
+            <form name = "loginform" action = "" method="POST">
+              <div id = "login">
+              <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email</label>
+                  <input for="cg_user_login" class="form-control " placeholder="Mail@example.com" type="text" name="email" id="email" class="input" value="" size="32" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3" style="margin-top: 20px;">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <div class="mb-3 input-group">
+                  <input for="cg_user_pass" type="password" class="form-control " placeholder="Password" name="password" id="password" class="input" value="" size="32">
+                  <button type="button" id="togglePassword" class="btn btn-secondary">
+                    <i class="bi bi-eye" style="font-weight: bolder; color: black"></i>
+    </button>
+              </div>
+                </div>
+              </div>
+              <div class="submit" class="mb-3">
+              </div>                                  
+            </form>
+            <button class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2" type="submit" name="login" class="button" style="margin-top:20px;">Login</button>
+
+            <p>Don't have an account? <a  id="signup" class="text-primary fw-bold ms-2" class="font-bold" data-testid="login-signup-link" href="#">Sign up</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<script>
+  $(document).ready(function() {
+    $('#signup').on('click', function(event) {
+        event.preventDefault(); // Evitar la acción predeterminada del enlace
+        loadPartialView('/signup', document.querySelector('.app'))
+    });
+});
+</script>

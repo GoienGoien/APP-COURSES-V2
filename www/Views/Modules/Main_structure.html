@@ -1,0 +1,87 @@
+<div class="header">
+    <div class="header-hearth">
+    <div class="background-color">
+
+    </div>
+    </div>
+    <div class="logo">
+        <img src="/CV_App_4C/www/img/Picture1.png" alt="">
+    </div>
+</div>
+<div class="page">
+
+</div>
+    <div class="navigation">
+      <ul>
+        <li class="list active">
+          <a id="home" href="#">
+            <span class="icon"><i class="bi bi-house"></i></span>
+            <span class="text">Home</span>
+          </a>
+        </li>
+        <li class="list">
+          <a id="mycourses" href="#">
+            <span class="icon"><i class="bi bi-card-heading"></i></span>
+            <span class="text">My Courses</span>
+          </a>
+        </li>
+        <li class="list">
+          <a id="calendar" href="#">
+            <span class="icon"><i class="bi bi-calendar-event"></i></span>
+            <span class="text">Calendar</span>
+          </a>
+        </li>
+        <li class="list">
+          <a id="more" href="#">
+            <span class="icon"><i class="bi bi-layout-wtf"></i></span>
+            <span class="text">More</span>
+          </a>
+        </li>
+        <div class="indicator"></div>
+      </ul>
+    </div>
+    <script src="../../js/nav.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#more').on('click', function(event) {
+            event.preventDefault(); // Evitar la acción predeterminada del enlace
+            loadPartialView('/prueba', document.querySelector('.page'))
+        });
+    });
+    $(document).ready(function() {
+      $('#home').on('click', function(event) {
+          event.preventDefault(); // Evitar la acción predeterminada del enlace
+          loadPartialView('/home', document.querySelector('.page'))
+      });
+  });
+  $(document).ready(function() {
+      $('#mycourses').on('click', function(event) {
+          event.preventDefault(); // Evitar la acción predeterminada del enlace
+          loadPartialView('/prueba', document.querySelector('.page'))
+      });
+  });
+  $(document).ready(function() {
+      $('#calendar').on('click', function(event) {
+          event.preventDefault(); // Evitar la acción predeterminada del enlace
+          loadPartialView('/calendar', document.querySelector('.page'))
+      });
+  });
+    </script>
+  <script>
+    const list = document.querySelectorAll('.list');
+    const indicator = document.querySelector('.indicator');
+  
+    function activeLink() {
+      list.forEach((item) => item.classList.remove('active'));
+      this.classList.add('active');
+  
+      // Move the indicator to the clicked list item
+      const index = [...list].indexOf(this);
+      indicator.style.transform = `translateX(calc(70px * ${index}))`;
+    }
+  
+    list.forEach((item) => item.addEventListener('click', activeLink));
+  </script>  
+        <script>
+            loadPartialView('home', document.querySelector('.page'))
+        </script>

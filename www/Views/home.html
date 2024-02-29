@@ -1,0 +1,76 @@
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="title_n">Courses</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="courseCarousel" class="owl-features owl-carousel">
+                    <div class="item carrousel_item">
+                        <div class="image">
+                            <img src="../../img/svg/danceicon.svg" alt="">
+                        </div>
+                        <div class="item-description">
+                            <h2>Folkloric Dance</h2>
+                            <p>Join into the chess course</p>
+                        </div>
+                    </div>
+                    <div class="item carrousel_item">
+                        <div class="image">
+                            <img src="../../img/svg/danceicon.svg" alt="">
+                        </div>
+                        <div class="item-description">
+                            <h2>Folkloric Dance</h2>
+                            <p>Join into the chess course</p>
+                        </div>
+                    </div>
+                    <div class="item carrousel_item">
+                        <div class="image">
+                            <img src="../../img/svg/danceicon.svg" alt="">
+                        </div>
+                        <div class="item-description">
+                            <h2>Folkloric Dance</h2>
+                            <p>Join into the chess course</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('.owl-features').owlCarousel({
+                items: 1,
+                loop: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    769: {
+                        items: 1,
+                    },
+                },
+            });
+        });
+    </script>
+    <script>
+        appendElementOnOwl('item_car', $('.owl-features'))
+        </script>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="title_n">Notifications</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="notifications">
+                    <div class="notification"></div>
+                    <div class="notification"></div>
+                    <div class="notification"></div>
+                    <div class="notification"></div>
+                </div>
+            </div>
+        </div>
+    </div>
