@@ -1,0 +1,153 @@
+<div class="container-fluid">
+    <div class="row">
+    <a href="#" id="return">
+        <i class="bi bi-caret-left-fill"></i>
+    </a>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="course">
+                    <img src="public/img/svg/chessicon.svg" alt="SAOSM">
+                <div class="course-info">
+                    <div class="course-title">
+                        <h2>Chess</h2>
+                    </div>
+                    <div class="course-description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus soluta aliquid voluptatum ad hic.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 15px;">
+        <div class="col-sm-12">
+        <div class="form">
+            <div id="carouselExampleAutoplaying" class="carousel slide courseph" data-bs-ride="carousel">
+                <div class="carousel-inner borderr">
+                  <div class="carousel-item active courseimg">
+                    <img src="public/img/chess_imgs/CH_1.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item courseimg">
+                    <img src="public/img/chess_imgs/CH_2.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item courseimg">
+                    <img src="public/img/chess_imgs/CH_3.jpg" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+              <div class="coursedate">
+                <h3>Schedule</h3>
+              <div class="row">
+                <div class="col">
+                  <ul><h6>Monday</h6>
+                    <li>2:00pm - 6:00pm</li>
+                  </ul>
+                </div>
+                <div class="col">
+                    <ul><h6>Wednesday</h6>
+                        <li>4:00pm - 6:40pm</li>
+                      </ul>
+                </div>
+                <div class="col">
+                    <ul><h6>Friday</h6>
+                        <li>2:30pm - 6:00pm</li>
+                      </ul>
+                </div>
+              </div>
+            </div>
+        </div>
+        <h3 class="Titlemap">Location</h3>
+        <div id="map">
+        </div>
+    </div>
+    </div>
+        </div>
+<style>
+    i{
+        color: rgb(221, 221, 221);
+        font-size: 20px;
+    }
+    .course{
+        align-items: center;
+        display: flex;
+            img{
+                width: 35%;
+                height: 35%;
+                padding: 15px;
+                background-color: rgb(221, 221, 221);
+                border-radius: 15px;
+            }
+            .course-info{
+                margin-inline: 18px;
+            h2{
+                margin-top: 20px;
+                font-size: 8.5vw;
+                color: #2e2e2e;
+                font-weight: bold;
+            }
+            p{
+                text-align: justify;
+                margin-top: -1.2vw;
+                font-size: 3vw;
+            }
+        }
+    }
+    .courseimg img{
+        border-radius: 2%;
+    }
+    .courseph{
+        padding: 2%;
+    }
+    .borderr{
+        border-radius: 2%;
+    }
+    .coursedate {
+        padding: 5%;
+
+        h3{
+            text-align: center;
+            color:#03D193;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .row{ 
+            .col{
+                ul{
+                    padding: 0px;
+                    list-style: none;
+                    text-align: center;
+                    li{text-align: center;
+                    }
+                }        }
+    }
+}
+.Titlemap{
+    text-align: center;
+    color:#03D193;
+    font-weight: bold;
+    margin-block: 15px;
+}
+#map {
+    height: 200px;
+    width: 100%;
+    border-radius: 5%;
+}
+</style>
+<script>
+    $(document).ready(function() {
+        $('#return').on('click', function(event) {
+            event.preventDefault(); // Evitar la acción predeterminada del enlace
+            loadPartialView('home', document.querySelector('.page'))
+            document.querySelector('.navigation').style.display = 'flex';
+        });
+    });  
+</script>
+<script src="public/js/map.js"></script>

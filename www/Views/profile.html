@@ -1,0 +1,100 @@
+<div class="profile-data">
+    <div class="background"> </div>
+    <div class="bg mt-8">
+        <div class="user-container">
+            <img src="/CV_App_4C/www/public/img/prof_imgs/Pogos.png" alt="Ejemplo" class="bg-light" >
+            <div class="profile">
+                <h2>Carlos Enrique Gongora Escalona</h2>
+                <h6>2216109031</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col studentinfo">
+              <ul>
+                <li><h6>Carreer</h6><p>Tecnologías de la Información</p></li>
+                <li><h6>Area</h6><p>Desarrollo de Software Multiplataforma</p></li>
+              </ul>
+            </div>
+            <div class="col studentinfo">
+              <ul>
+                <li><h6>Grade</h6><p>4</p></li>
+                <li><h6>Group</h6><p>C</p></li>
+              </ul>
+            </div>
+          </div>
+    </div>
+</div>
+<style>
+/* Profile Container Styles */
+.profile-data {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Background Styles */
+.background {
+    background: linear-gradient(to bottom, #0a63b6, #00b88a);;
+    background-size: cover;
+    height: 20%;
+}
+
+/* Profile Container Styles */
+.bg {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.user-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+/* Profile Image Styles */
+.user-container img {
+    border-radius: 50%;
+    width: 100px; /* Set your desired width */
+    height: 100px; /* Set your desired height */
+    object-fit: cover; /* Maintain aspect ratio while covering the specified dimensions */
+    margin-right: 15px;
+}
+
+/* User Details Styles */
+.profile {
+    color: #2e2e2e;
+}
+
+.profile h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.profile h6 {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #a0a0a0;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .user-container {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .user-container img {
+        position: relative;
+        bottom: 70px;
+        margin: 0 0 10px;
+    }
+    .profile{
+        text-align: center;
+        bottom: 70px;
+        position: relative;
+    }
+}
+.studentinfo li {
+    list-style: none;
+}
+</style>
