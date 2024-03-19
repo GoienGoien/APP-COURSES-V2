@@ -1,0 +1,133 @@
+@import url(bootstrap/dist/css/bootstrap.min.css);
+@import url(bootstrap-icons/font/bootstrap-icons.css);
+*{
+    margin: 0;
+    padding: 0;
+}
+/*Pantallas movil*/
+h1, h2, h3, h4, h5, h6, p, a, li, ul {
+    font-family: sans-serif
+}
+.app{
+    width: 100vw;
+    height: 100vh;
+    padding: 1rem;
+}
+.description{
+    position: relative;
+    top: -2rem;
+    p{
+        color: rgb(255, 255, 255)
+    }
+    .actions{
+        padding-top: 1.5rem;
+        a{
+            display: inline;
+            i{
+                margin-left: 2%;
+                color: white;
+                font-size: 16px;
+            }
+        }
+
+    }
+    .song-container{
+        height: 50px;
+        display: flex;
+    .song-img{
+        margin-right: 1rem;
+        width: 3.5rem;
+        top: auto;
+        border: 3px #333335 solid;
+        height: 3.5rem;
+    }
+    .song-name{
+        padding-top: 4px;
+        position: relative;
+        display: flow;
+    h2{
+        color: rgb(255, 255, 255);
+        margin: 0;
+        font-size: 22px;
+    }
+    h6{
+        color:lightgray;
+        margin: 0;
+        font-size: 14px;
+    }
+        }
+    .song-info{
+        display: flex;
+        justify-content: end;
+        margin-right: 1rem;
+
+    }
+    }
+}
+.profile-data{
+    border: dotted;
+    border-color: #ff9a9a;
+    img{
+        margin-left: 1.5rem;
+        margin-right: 2%;
+        position: relative;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 10%;
+    }
+    div.bg{
+        display: flex;
+        background-color: #333335;
+        flex-direction: column;
+        align-items: center;
+        .image-container {
+            display: flex;
+            align-items: center; /* Alinea verticalmente los elementos en el centro */
+        }
+        .User {
+            position: relative;
+            top: -0.6rem;
+        h2{
+            font-weight: bold;
+        }
+        h6{
+        color: rgb(204, 204, 204);
+        font-weight: initial;}
+        }
+        .image-container{
+            img{
+                top: -2rem;
+                width: 7rem;
+                height: 7rem;
+                border: 50% solid #333335;
+            }
+        }
+        div{
+            width: 100%;
+        }
+    }
+    div.background{
+        background-image: url(https://i.pinimg.com/originals/f2/e2/7b/f2e27b4784dec458fa9bf8bf11dd9895.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+.separate-top{
+    padding-top: 1.5rem;
+    border-top: gray solid 2px ;
+}
+.separate-bttm{
+    padding-bottom: 1.5rem;
+    border-bottom: gray solid 2px;
+}
+
+
+/*Pantallas tablet*/
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        /* padding:75px 0px 75px 170px;  padding-top + padding-bottom + text area = image height */
+        /* margin:-90px 0px 0px -198px;  offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}

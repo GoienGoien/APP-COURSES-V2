@@ -1,0 +1,53 @@
+/*IMPORT YESEVA ONE FONT VARIATIONS*/
+@font-face {
+  font-family: "Quicksand";
+  src: url("../fonts/Quicksand/Quicksand[wght].ttf");
+}
+
+// DEFINITION OF CUSTOM FONTS
+$font-family-sans-serif: "Quicksand", sans-serif;
+$font-family-monospace: "Quicksand", sans-serif;
+$headings-font-family: "Quicksand", sans-serif;
+
+// CHANGING PRIMARY AND SECONDARY COLORS
+$primary: #1f1d35;
+$secondary: #bbbbbb;
+
+// MAKING CUSTOM THEME COLORS
+$custom-colors: (
+  "primary-dark": #171528,
+  "tertiary": #69ca76,
+  "primary-light": #595768
+);
+
+@import "./bootstrap/scss/mixins";
+@import "./bootstrap/scss/functions";
+@import "./bootstrap/scss/variables";
+@import "./bootstrap/scss/variables-dark";
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "./bootstrap/scss/maps";
+@import "./bootstrap/scss/utilities";
+@import "./bootstrap/scss/bootstrap-utilities.scss";
+@import "./bootstrap/scss/utilities/api";
+
+// MAKE RESPONSIVE
+$rounded-types: ("rounded", "rounded-top", "rounded-end", "rounded-bottom", "rounded-start", "font-size", "width", "height");
+
+@each $rounded-type in $rounded-types {
+  $utilities: map-merge(
+    $utilities,
+    (
+      $rounded-type:
+        map-merge(
+          map-get($utilities, $rounded-type),
+          (
+            responsive: true
+          )
+        )
+    )
+  );
+}
+
+@import "./bootstrap/scss/bootstrap";
