@@ -7,30 +7,30 @@
         <div class="row">
             <div class="col-sm-12">
                 <div id="courseCarousel" class="owl-features owl-carousel">
-                    <div class="item carrousel_item">
+                    <div class="item carrousel_item chessitem">
                         <div class="image">
-                            <img src="../../img/svg/danceicon.svg" alt="">
+                            <img src="public/img/svg/chessicon.svg" alt="">
                         </div>
                         <div class="item-description">
-                            <h2>Folkloric Dance</h2>
+                            <h2>Chess</h2>
                             <p>Join into the chess course</p>
                         </div>
                     </div>
                     <div class="item carrousel_item">
                         <div class="image">
-                            <img src="../../img/svg/danceicon.svg" alt="">
+                            <img src="public/img/svg/danceicon.svg" alt="imagen">
                         </div>
                         <div class="item-description">
                             <h2>Folkloric Dance</h2>
-                            <p>Join into the chess course</p>
+                            <p>Dance with us</p>
                         </div>
                     </div>
-                    <div class="item carrousel_item">
+                    <div class="item carrousel_item chessitem">
                         <div class="image">
-                            <img src="../../img/svg/danceicon.svg" alt="">
+                            <img src="public/img/svg/chessicon.svg" alt="">
                         </div>
                         <div class="item-description">
-                            <h2>Folkloric Dance</h2>
+                            <h2>Chess</h2>
                             <p>Join into the chess course</p>
                         </div>
                     </div>
@@ -66,11 +66,70 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="notifications">
-                    <div class="notification"></div>
-                    <div class="notification"></div>
-                    <div class="notification"></div>
-                    <div class="notification"></div>
+                    <div class="notification" style="display: flex; align-items:center">
+                        <i class="bi bi-bell"></i>
+                        <div class="info">
+                            <div class="title">
+                                <h6>ALERT!!</h6>
+                            </div>
+                            <div class="description">
+                                <p>NOW YOU ARE IN THE CHESS COURSE!!!!!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notification" style="display: flex; align-items:center">
+                        <i class="bi bi-bell"></i>
+                        <div class="info">
+                            <div class="title">
+                                <h6>ALERT!!</h6>
+                            </div>
+                            <div class="description">
+                                <p>NOTIFICATION TEST!!!!!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="notification" style="display: flex; align-items:center">
+                        <i class="bi bi-bell"></i>
+                        <div class="info">
+                            <div class="title">
+                                <h6>ALERT!!</h6>
+                            </div>
+                            <div class="description">
+                                <p>YOU ARE NOW ONLINE!!!!!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notification" style="display: flex; align-items:center">
+                        <i class="bi bi-bell"></i>
+                        <div class="info">
+                            <div class="title">
+                                <h6>ALERT!!</h6>
+                            </div>
+                            <div class="description">
+                                <p>YOU ARE NOW ONLINE!!!!!</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            $('.danceitem').on('click', function(event) {
+                event.preventDefault(); // Evitar la acción predeterminada del enlace
+                loadPartialView('/prueba', document.querySelector('.page'))
+                document.querySelector('.navigation').style.display = 'none';
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.chessitem').on('click', function(event) {
+                event.preventDefault(); // Evitar la acción predeterminada del enlace
+                loadPartialView('/course', document.querySelector('.page'))
+                document.querySelector('.navigation').style.display = 'none';
+            });
+        });
+    </script>

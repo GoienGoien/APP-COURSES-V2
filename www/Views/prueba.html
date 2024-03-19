@@ -1,3 +1,36 @@
-<div class="a" style="background-color: aqua; height:400px">
-b
-</div>
+<div class="container-fluid">
+    <div class="row">
+    <a href="#" id="return">
+        <i class="bi bi-caret-left-fill"></i>
+    </a>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="course">
+                    <img src="public/img/svg/danceicon.svg" width="90%" alt="SAOSM">
+                <div class="course-info">
+                    <div class="course-title">
+                        <h2>Folkloric Dance</h2>
+                    </div>
+                    <div class="course-description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus soluta aliquid voluptatum ad hic.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+        <div class="form"></div>
+    </div>
+    </div>
+        </div>
+<script>
+    $(document).ready(function() {
+        $('#return').on('click', function(event) {
+            event.preventDefault(); // Evitar la acción predeterminada del enlace
+            loadPartialView('home', document.querySelector('.page'))
+            document.querySelector('.navigation').style.display = 'flex';
+        });
+    });  
+</script>

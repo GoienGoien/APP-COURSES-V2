@@ -1,9 +1,18 @@
-<div class="item">
-    <div class="image">
-        <img src="/CV_App_4C/www/img/svg/danceicon.svg" alt="">
+    <div class="item carrousel_item danceitem">
+        <div class="image">
+            <img src="public/img/svg/danceicon.svg" alt="SAOSM">
+        </div>
+        <div class="item-description">
+            <h2>Folkloric Dance</h2>
+            <p>Dance with us</p>
+        </div>
     </div>
-    <div class="item-description">
-        <h2>Folkloric Dance</h2>
-        <p>Join into the chess course</p>
-    </div>
-</div>
+    <script>
+        $(document).ready(function() {
+            $('.danceitem').on('click', function(event) {
+                event.preventDefault(); // Evitar la acción predeterminada del enlace
+                loadPartialView('/prueba', document.querySelector('.page'))
+                document.querySelector('.navigation').style.display = 'none';
+            });
+        });
+    </script>

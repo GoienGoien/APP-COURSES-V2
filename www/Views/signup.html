@@ -6,30 +6,52 @@
       <div class="d-flex align-items-center justify-content-center w-100">
         <div class="row justify-content-center w-100">
           <div class="col-md-8 col-lg-6 col-xxl-3">
-            <div class="card mb-0">
+            <div class="mb-0">
               <div class="card-body">
                 <a href="#" class="text-nowrap logo-img text-center d-block py-3 w-100">
-                  <img src="img/Picture1.png" style="width:30%" alt="">
+                  <img src="public/img/Picture1.png" style="width:40%" alt="">
                 </a>
-                <form name="registerform" id="registerform" method="POST">
-                    <div id = "login">
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Email</label>
-                            <input for="cg_user_login" class="form-control " placeholder="Mail@example.com" type="text" name="email" id="email" class="input" value="" size="32" aria-describedby="emailHelp">
-                          </div>
-                          <div class="mb-3" style="margin-top: 20px;">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input for="cg_user_pass" type="password" class="form-control " placeholder="Password" name="password" id="password" class="input" value="" size="32">
-                        </div>
-                        <div class="mb-3" style="margin-top: 20px;">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <div class="mb-3 input-group">
-                            <input for="cg_user_pass" type="password" class="form-control " placeholder="Password" name="password" id="password" class="input" value="" size="32">
-                        </div>
-                          </div>
-                        </div>
+                <form name="registerform" id="regForm" method="POST">
+                  <!-- One "tab" for each step in the form: -->
+                  <div class="tab">
+                    <label for="" class="form-label">Student</label>
+                    <p><input placeholder="First name..." oninput="this.className = ''" name="fname" class="form-control"></p>
+                    <p><input placeholder="Last name" oninput="this.className = ''" name="lname" class="form-control"></p>
+                  </div>
+                  <div class="tab">
+                    <label for="" class="form-label">Student Information</label>
+                    <p><input placeholder="Student ID" oninput="this.className = ''" name="email" class="form-control"></p>
+                    <p><select class="form-select" aria-label="Default select example">
+                      <option selected value="">--Carreer--</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select></p>
+                    <p><select class="form-select" aria-label="Default select example">
+                      <option selected value="">--Area--</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select></p>
+                  </div>
+                  <div class="tab">
+                    <label for="" class="form-label">Email</label>
+                    <p><input placeholder="Email" oninput="this.className = ''" name="uname" class="form-control"></p>
+                    <p><input placeholder="Password" oninput="this.className = ''" name="pword" type="password" class="form-control"></p>
+                  </div>
+                  <!-- Circles which indicates the steps of the form: -->
+                  <div style="text-align:center;margin-top:40px;">
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
+                  </div>
                 </form>
-                <button class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2" type="submit" name="register" id="register" class="button" value="Registrar" style="    margin-top: 20px;                ">Sign Up</button>
+                <div style="overflow:auto;">
+                  <div style="float:right;">
+                    <button type="button" id="prevBtn" onclick="nextPrev(-1)" class=" btn btn-secondary">Previous</button>
+                    <button type="button" id="nextBtn" onclick="nextPrev(1)" class=" btn btn-primary">Next</button>
+                  </div>
+                </div>
                 <p >Do you have an account?<a id="loginlink" class="text-primary fw-bold ms-2" href="#">Login</a> </p>
             </div>
               </div>
@@ -43,7 +65,16 @@
     $(document).ready(function() {
       $('#loginlink').on('click', function(event) {
           event.preventDefault(); // Evitar la acción predeterminada del enlace
-          loadPartialView('/login', document.querySelector('.app'))
+          loadPartialView('login', document.querySelector('.page'))
+      });
+  });
+  </script>
+  <script src="public/js/signup.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.Successful').on('click', function(event) {
+          event.preventDefault(); // Evitar la acción predeterminada del enlace
+          loadPartialView('login', document.querySelector('.page'))
       });
   });
   </script>

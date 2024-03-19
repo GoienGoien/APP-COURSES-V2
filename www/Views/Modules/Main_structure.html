@@ -1,15 +1,12 @@
-<div class="header">
+<div class="header" style="height: 4.5em">
     <div class="header-hearth">
     <div class="background-color">
 
     </div>
     </div>
     <div class="logo">
-        <img src="/CV_App_4C/www/img/Picture1.png" alt="">
+        <img src="public/img/Picture1.png" alt="">
     </div>
-</div>
-<div class="page">
-
 </div>
     <div class="navigation">
       <ul>
@@ -26,26 +23,26 @@
           </a>
         </li>
         <li class="list">
-          <a id="calendar" href="#">
-            <span class="icon"><i class="bi bi-calendar-event"></i></span>
-            <span class="text">Calendar</span>
-          </a>
-        </li>
-        <li class="list">
           <a id="more" href="#">
             <span class="icon"><i class="bi bi-layout-wtf"></i></span>
             <span class="text">More</span>
           </a>
         </li>
+        <li class="list">
+          <a id="profile" href="#">
+            <span class="icon"><i class="bi bi-person-circle"></i></span>
+            <span class="text">Profile</span>
+          </a>
+        </li>
         <div class="indicator"></div>
       </ul>
     </div>
-    <script src="../../js/nav.js"></script>
+    <script src="../../public/js/nav.js"></script>
     <script>
       $(document).ready(function() {
-        $('#more').on('click', function(event) {
+        $('#profile').on('click', function(event) {
             event.preventDefault(); // Evitar la acción predeterminada del enlace
-            loadPartialView('/prueba', document.querySelector('.page'))
+            loadPartialView('/profile', document.querySelector('.page'))
         });
     });
     $(document).ready(function() {
@@ -57,13 +54,13 @@
   $(document).ready(function() {
       $('#mycourses').on('click', function(event) {
           event.preventDefault(); // Evitar la acción predeterminada del enlace
-          loadPartialView('/prueba', document.querySelector('.page'))
+          loadPartialView('/mycourses', document.querySelector('.page'))
       });
   });
   $(document).ready(function() {
-      $('#calendar').on('click', function(event) {
+      $('#more').on('click', function(event) {
           event.preventDefault(); // Evitar la acción predeterminada del enlace
-          loadPartialView('/calendar', document.querySelector('.page'))
+          loadPartialView('/more', document.querySelector('.page'))
       });
   });
     </script>
