@@ -170,29 +170,28 @@ h1{
   width: 98%;
   margin: 0% 0% 0% 1%;
   max-width: 100%;
-  padding-block: 12vw;
-  height: 200px; /* Adjust the height as needed */
+  height: 90%;
   border-radius: 15px;
   display: flex;
   align-items: center;
   
   .image{
-      display: flex;
-      justify-content: center;
-      height: 10em;
-      width: 10em;
-      border-radius: 15px;
-      margin: 1.5em;
+    display: flex;
+    justify-content: center;
+    height: 35vw;
+    width: 35vw;
+    border-radius: 15px;
   }
   h2{
-      margin-top: 20px;
-      font-size: 8.5vw;
-      color: #2e2e2e;
-      font-weight: bold;
+    margin-right: 10px;
+    margin-top: 20px;
+    font-size: 11.5vw;
+    color: #2e2e2e;
+    font-weight: bold;
   }
   p{
       margin-top: -1.2vw;
-      font-size: 3vw;
+      font-size: 3.2vw;
   }
 }
 
@@ -204,18 +203,48 @@ h1{
 }
 
 .notification {
-  background: rgb(241, 241, 241);
   width: 100%;
-  max-width: 100%;
-  height: 80px;
-  border-radius: 15px;
-  margin: 10px 5px
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.notification-content {
+  flex-grow: 1;
+}
+
+.notification-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.notification-header i {
+  margin-right: 10px;
+}
+
+.title h6 {
+  margin: 15px;
+  font-size: 6.2vw;
+  font-weight: bold;
+}
+
+.date p {
+  margin: 0;
+  font-size: 14px;
+  color: #888;
+}
+
+.description p {
+  margin: 5px;
+  font-size: 4.5vw;
 }
 
 .notification i{
   color: #2e2e2e;
-  font-weight: bold;
-  margin: 15px;
+  font-size: 35px;
+  margin: 10px;
 }
 .info{
   margin-top: 8px;
@@ -330,9 +359,9 @@ h1.mycourses{
   gap: 1rem;
   flex-wrap: wrap;
 }
-ul#Grid li {
-  width: 250px; /* Set the width */
-  height: 250px; /* Set the height */
+ul#Grid li.mycourse {
+  width: 125px; /* Set the width */
+  height: 125px; /* Set the height */
   background-color: rgb(241, 241, 241);
   border-radius: 15px;
   display: flex; /* Ensure they are displayed flex */
@@ -342,7 +371,7 @@ ul#Grid li {
     justify-content: center;
     align-items: center;
     img{
-    width: 90%;
+    width: 75%;
     padding: 10px;
   }}
 }
@@ -354,5 +383,138 @@ ul#Grid li {
       justify-content: center;
   }
 }
+/*PROFILE :3 */
 
+/* Profile Container Styles */
+.profile-data {
+  width: 100%;
+  height: 135vh;
+  overflow: hidden;
+}
+.profile input {
+  text-align: center;
+}
+/* Background Styles */
+.background {
+  background: linear-gradient(to bottom, #0a63b6, #00b88a);;
+  background-size: cover;
+  height: 20%;
+}
 
+/* Profile Container Styles */
+.bg {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.user-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+/* Profile Image Styles */
+.user-container img {
+  border-radius: 50%;
+  width: 100px; /* Set your desired width */
+  height: 100px; /* Set your desired height */
+  object-fit: cover; /* Maintain aspect ratio while covering the specified dimensions */
+  margin-right: 15px;
+}
+
+/* User Details Styles */
+.profile {
+  color: #2e2e2e;
+}
+
+.profile h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.profile h6 {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #a0a0a0;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .user-container {
+      justify-content: center;
+      flex-direction: column;
+      margin-bottom: 0px;
+  }
+
+  .user-container img {
+      position: relative;
+      bottom: 70px;
+      margin: 0 0 10px;
+  }
+  .profile{
+      text-align: center;
+      bottom: 70px;
+      position: relative;
+  }
+}
+.studentinfo li {
+  list-style: none;
+}
+h1.optionh1{
+  padding-top: 20px;
+  margin: 20px;
+}
+ul.options li {
+  margin-left: -6vh;
+  list-style: none;
+}
+/* Styling the options container */
+.options {
+margin-top: 20px;
+}
+
+/* Styling the list items */
+.options li {
+list-style: none;
+margin-bottom: 10px;
+}
+.courseimg img{
+  border-radius: 2%;
+}
+.courseph{
+  padding: 2%;
+}
+.borderr{
+  border-radius: 2%;
+}
+.coursedate {
+  padding: 5%;
+
+  h3{
+      text-align: center;
+      color:#03D193;
+      font-weight: bold;
+      margin-bottom: 15px;
+  }
+  .row{ 
+      .col{
+          ul{
+              padding: 0px;
+              list-style: none;
+              text-align: center;
+              li{text-align: center;
+              }
+          }        }
+}
+}
+.Titlemap{
+text-align: center;
+color:#03D193;
+font-weight: bold;
+margin-block: 15px;
+}
+#map {
+height: 200px;
+width: 100%;
+border-radius: 5%;
+}

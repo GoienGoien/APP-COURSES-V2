@@ -21,16 +21,3 @@ var polygon = L.polygon([
 ]).addTo(map);
 
 polygon.bindPopup("Universidad Tecnológica de Tamaulipas Norte");
-
-var circle = L.circle([26.049828556200943, -98.26058463137711], {
-    color: 'green',
-    fillColor: '#8BDC6A',
-    fillOpacity: 0.5,
-    radius: 10
-}).addTo(map);
-
-circle.bindPopup("Reunion Point");
-
-var marker = L.marker([26.05000928580532, -98.2607053307823]).addTo(map);
-
-marker.bindPopup("<b>Classroom 11</b><br> Information Technologies").openPopup();

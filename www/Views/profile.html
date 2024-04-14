@@ -1,100 +1,55 @@
 <div class="profile-data">
     <div class="background"> </div>
     <div class="bg mt-8">
+    <form class="student-information" name="editform" id="editForm" method="POST">
         <div class="user-container">
-            <img src="/CV_App_4C/www/public/img/prof_imgs/Pogos.png" alt="Ejemplo" class="bg-light" >
-            <div class="profile">
-                <h2>Carlos Enrique Gongora Escalona</h2>
-                <h6>2216109031</h6>
+            <img src="public/img/prof_imgs/Pogos.jpg" alt="Ejemplo" class="bg-light" >
+            <div class="profile placeholder-glow">
+                <h2 class="User-name placeholder rounded">██████████████</h2>
+                <h6 class="Studentid placeholder rounded">██████████</h6>
             </div>
         </div>
-        <div class="row">
-            <div class="col studentinfo">
+        <div class="row" style="margin-top: -35px;">
+            <div class="col studentinfo placeholder-glow">
               <ul>
-                <li><h6>Carreer</h6><p>Tecnologías de la Información</p></li>
-                <li><h6>Area</h6><p>Desarrollo de Software Multiplataforma</p></li>
+                <li><h6>Career</h6><p class="User-Career placeholder rounded">█████████</p></li>
+                <li><h6>Area</h6><p class="User-Area placeholder rounded">███████</p></li>
+                <li><h6>Email</h6><p class="User-Email placeholder rounded">█████████</p></li>
               </ul>
             </div>
-            <div class="col studentinfo">
+            <div class="col studentinfo placeholder-glow">
               <ul>
-                <li><h6>Grade</h6><p>4</p></li>
-                <li><h6>Group</h6><p>C</p></li>
+                <li>
+                    <h6>Grade</h6>
+                    <p class="User-ClassGrade placeholder rounded">█████████</p>
+                </li>
+                <li>
+                    <h6>Group</h6>
+                    <p class="User-ClassGroup placeholder rounded">█████████</p>
+                </li>
+                <li><h6>Password</h6><p class="User-Password placeholder rounded">***********</p></li>
               </ul>
             </div>
           </div>
+          <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-12">
+            <div style="padding: 10px;">
+                <button id="callEdit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2 btn-profile-edit" type="button" name="" class="button" onclick="">Edit <i class="bi bi-pencil-square"></i></button>
+            </div>
+        </div>
+        </div>
+    </form>
     </div>
 </div>
-<style>
-/* Profile Container Styles */
-.profile-data {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-
-/* Background Styles */
-.background {
-    background: linear-gradient(to bottom, #0a63b6, #00b88a);;
-    background-size: cover;
-    height: 20%;
-}
-
-/* Profile Container Styles */
-.bg {
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.user-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 2rem;
-}
-
-/* Profile Image Styles */
-.user-container img {
-    border-radius: 50%;
-    width: 100px; /* Set your desired width */
-    height: 100px; /* Set your desired height */
-    object-fit: cover; /* Maintain aspect ratio while covering the specified dimensions */
-    margin-right: 15px;
-}
-
-/* User Details Styles */
-.profile {
-    color: #2e2e2e;
-}
-
-.profile h2 {
-    margin: 0;
-    font-size: 24px;
-}
-
-.profile h6 {
-    margin: 5px 0 0;
-    font-size: 14px;
-    color: #a0a0a0;
-}
-
-/* Responsive Styles */
-@media (max-width: 600px) {
-    .user-container {
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    .user-container img {
-        position: relative;
-        bottom: 70px;
-        margin: 0 0 10px;
-    }
-    .profile{
-        text-align: center;
-        bottom: 70px;
-        position: relative;
-    }
-}
-.studentinfo li {
-    list-style: none;
-}
-</style>
+<script>
+    $(document).ready(function() {
+        $('#callEdit').on('click', function(event) {
+            event.preventDefault(); // Evitar la acción predeterminada del enlace
+            loadPartialView('Modules/profile_edit', document.querySelector('.student-information'))
+            
+        });
+    });  
+</script>
+<script>
+    getUserData(getLocalStorageValue("id_user"), null)
+</script>

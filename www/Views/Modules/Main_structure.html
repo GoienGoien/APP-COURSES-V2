@@ -37,30 +37,37 @@
         <div class="indicator"></div>
       </ul>
     </div>
-    <script src="../../public/js/nav.js"></script>
     <script>
       $(document).ready(function() {
         $('#profile').on('click', function(event) {
             event.preventDefault(); // Evitar la acción predeterminada del enlace
-            loadPartialView('/profile', document.querySelector('.page'))
+            loadPartialView('profile', document.querySelector('.page'))
+            isCoursesPrinted = false;
+            isNotiPrinted = false;
         });
     });
     $(document).ready(function() {
       $('#home').on('click', function(event) {
           event.preventDefault(); // Evitar la acción predeterminada del enlace
-          loadPartialView('/home', document.querySelector('.page'))
+          loadPartialView('home', document.querySelector('.page'))
+          isCoursesPrinted = false;
+          isNotiPrinted = false;
       });
   });
   $(document).ready(function() {
       $('#mycourses').on('click', function(event) {
           event.preventDefault(); // Evitar la acción predeterminada del enlace
-          loadPartialView('/mycourses', document.querySelector('.page'))
+          loadPartialView('mycourses', document.querySelector('.page'))
+          isCoursesPrinted = false;
+          isNotiPrinted = false;
       });
   });
   $(document).ready(function() {
       $('#more').on('click', function(event) {
           event.preventDefault(); // Evitar la acción predeterminada del enlace
-          loadPartialView('/more', document.querySelector('.page'))
+          loadPartialView('more', document.querySelector('.page'))
+          isCoursesPrinted = false;
+          isNotiPrinted = false;
       });
   });
     </script>

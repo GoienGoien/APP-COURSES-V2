@@ -7,56 +7,17 @@
         <div class="row">
             <div class="col-sm-12">
                 <div id="courseCarousel" class="owl-features owl-carousel">
-                    <div class="item carrousel_item chessitem">
-                        <div class="image">
-                            <img src="public/img/svg/chessicon.svg" alt="">
-                        </div>
-                        <div class="item-description">
-                            <h2>Chess</h2>
-                            <p>Join into the chess course</p>
-                        </div>
-                    </div>
                     <div class="item carrousel_item">
-                        <div class="image">
-                            <img src="public/img/svg/danceicon.svg" alt="imagen">
+                        <div class="image placeholder placeholder-glow">
                         </div>
-                        <div class="item-description">
-                            <h2>Folkloric Dance</h2>
-                            <p>Dance with us</p>
-                        </div>
-                    </div>
-                    <div class="item carrousel_item chessitem">
-                        <div class="image">
-                            <img src="public/img/svg/chessicon.svg" alt="">
-                        </div>
-                        <div class="item-description">
-                            <h2>Chess</h2>
-                            <p>Join into the chess course</p>
+                        <div class="item-description placeholder-glow">
+                            <h2 class="placeholder placeholder-glow">Course</h2>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        $(document).ready(function () {
-            $('.owl-features').owlCarousel({
-                items: 1,
-                loop: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                    },
-                    769: {
-                        items: 1,
-                    },
-                },
-            });
-        });
-    </script>
-    <script>
-        appendElementOnOwl('item_car', $('.owl-features'))
-        </script>
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -66,70 +27,10 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="notifications">
-                    <div class="notification" style="display: flex; align-items:center">
-                        <i class="bi bi-bell"></i>
-                        <div class="info">
-                            <div class="title">
-                                <h6>ALERT!!</h6>
-                            </div>
-                            <div class="description">
-                                <p>NOW YOU ARE IN THE CHESS COURSE!!!!!</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="notification" style="display: flex; align-items:center">
-                        <i class="bi bi-bell"></i>
-                        <div class="info">
-                            <div class="title">
-                                <h6>ALERT!!</h6>
-                            </div>
-                            <div class="description">
-                                <p>NOTIFICATION TEST!!!!!</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="notification" style="display: flex; align-items:center">
-                        <i class="bi bi-bell"></i>
-                        <div class="info">
-                            <div class="title">
-                                <h6>ALERT!!</h6>
-                            </div>
-                            <div class="description">
-                                <p>YOU ARE NOW ONLINE!!!!!</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="notification" style="display: flex; align-items:center">
-                        <i class="bi bi-bell"></i>
-                        <div class="info">
-                            <div class="title">
-                                <h6>ALERT!!</h6>
-                            </div>
-                            <div class="description">
-                                <p>YOU ARE NOW ONLINE!!!!!</p>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        $(document).ready(function() {
-            $('.danceitem').on('click', function(event) {
-                event.preventDefault(); // Evitar la acción predeterminada del enlace
-                loadPartialView('/prueba', document.querySelector('.page'))
-                document.querySelector('.navigation').style.display = 'none';
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.chessitem').on('click', function(event) {
-                event.preventDefault(); // Evitar la acción predeterminada del enlace
-                loadPartialView('/course', document.querySelector('.page'))
-                document.querySelector('.navigation').style.display = 'none';
-            });
-        });
-    </script>
+    <script>printAllNotifications()</script>
+    <script>printAllCourses()</script>

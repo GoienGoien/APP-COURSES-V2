@@ -24,7 +24,7 @@ document.addEventListener('deviceready', onDeviceReady, false);
 // FUNCION PARA CARGAR UNA VISTA PARCIAL
 function loadPartialView(viewName, divClass = null) {
     $.ajax({
-        url: '../www/Views/' + viewName + '.html',
+        url: 'Views/' + viewName + '.html',
         method: 'GET',
         success: function(data) {
             $(divClass).html(data);
@@ -36,7 +36,7 @@ function loadPartialView(viewName, divClass = null) {
 }
 
 function appendElementOnOwl(elementName, container) {
-    route = '../www/Views/Elements/' + elementName + '.html';
+    route = 'Views/Elements/' + elementName + '.html';
     itemCount = container.find('owl-stage').children().length;
     $.get(route, function (data) {
         container.trigger('add.owl.carousel', [data, itemCount]);
@@ -50,11 +50,29 @@ function onDeviceReady() {
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     document.getElementById('deviceready').classList.add('ready');
 }
+function saveLocalStorageValue(name, value) {
+    // Para almacenar utilizaremos el método "setItem"
+    // pasándole como parámetros la clave y el valor a almacenar:
+    window.localStorage.setItem(name, value);
+    return console.log(name + " guardado exitosamente.")
+}
+
+function getLocalStorageValue(name) {
+    //Para recuperar un valor utilizamos el método "getItem"
+    //pasándole como parámetro la clave del valor deseado:
+    return window.localStorage.getItem(name);
+}
+
+function removeLocalStorageValue(name) {
+    // Y para borrar el método removeItem y la clave:
+    window.localStorage.removeItem(name);
+    return console.log(name + " eliminado exitosamente.")
+}
 
 // FUNCION PARA CARGAR UNA VISTA PARCIAL CON DURACIÓN DE 3 SEGUNDOS
 function loadPartialViewWithDelay(viewName, divClass = null) {
     $.ajax({
-        url: '../www/Views/' + viewName + '.html',
+        url: 'Views/' + viewName + '.html',
         method: 'GET',
         success: function(data) {
             $(divClass).html(data);
@@ -71,7 +89,7 @@ function loadPartialViewWithDelay(viewName, divClass = null) {
 }
 
 function togglePassword() {
-    var x = document.getElementById("password");
+    var x = document.getElementById("user-password");
     if (x.type === "password") {
       x.type = "text";
     } else {
@@ -95,3 +113,15 @@ function ToPrincipal(){
     loadPartialView('home', document.querySelector('.page'))
     document.getElementsByClassName("page")[0].style.marginBottom = "110px";
 }
+
+function removePlaceholderClass() {
+    var glowelements = document.querySelectorAll('.placeholder-glow');
+    var elements = document.querySelectorAll('.placeholder');
+    elements.forEach(function(element) {
+        element.classList.remove('placeholder');
+    });
+    glowelements.forEach(function(element) {
+        element.classList.remove('placeholder-glow');
+    });
+}
+

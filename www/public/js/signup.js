@@ -1,8 +1,6 @@
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
-function toLogin(){
-  loadPartialView('login', document.querySelector('.page'))
-}
+
 function showTab(n) {
   // This function will display the specified tab of the form...
   var x = document.getElementsByClassName("tab");
@@ -14,7 +12,10 @@ function showTab(n) {
     document.getElementById("prevBtn").style.display = "inline";
   }
   if (n == (x.length - 1)) {
+    document.getElementById("nextBtn").classList.add("btn-login-form");
     document.getElementById("nextBtn").innerHTML = "Submit";
+    document.getElementById("nextBtn").addEventListener('click', validateAndExecute);
+
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
   }
@@ -35,7 +36,6 @@ function nextPrev(n) {
   if (currentTab >= x.length) {
     // ... the form gets submitted:
 
-    document.getElementById("nextBtn").addEventListener("click", toLogin());
     // document.getElementById("regForm").submit();
     
     
@@ -57,6 +57,11 @@ function validateForm() {
       y[i].classList.add("invalid");
       valid = false;
     }
+    // Check if input is student ID and its length is greater than 10
+    if (y[i].id === "user-studentId" && y[i].value.length > 10) {
+      y[i].classList.add("invalid");
+      valid = false;
+    }
   }
   
   // Check select elements
@@ -75,6 +80,7 @@ function validateForm() {
   return valid;
 }
 
+
 function fixStepIndicator(n) {
   // This function removes the "active" class of all steps...
   var i, x = document.getElementsByClassName("step");
@@ -86,7 +92,16 @@ function fixStepIndicator(n) {
 }
 
 function togglePassword() {
-  var x = document.getElementById("password");
+  var x = document.getElementById("user-password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+function toggleNewPassword() {
+  var x = document.getElementById("user-password-edit");
   if (x.type === "password") {
     x.type = "text";
   } else {
@@ -100,3 +115,37 @@ $(document).ready(function() {
       loadPartialView('login', document.querySelector('.page'))
   });
 });
+
+function validateAndExecute() {
+  var emailInput = document.getElementById('user-email').value.trim();
+  var passwordInput = document.getElementById('user-password').value.trim();
+
+  if (emailInput !== '' && passwordInput !== '') {
+      
+      // Capturar los valores del formulario
+      var userName = $('#user-name').val();
+      var userLastname = $('#user-lastname').val();
+      var userStudentId = $('#user-studentId').val();
+      var userCareer = $('#user-career').val();
+      var userArea = $('#user-area').val();
+      var userEmail = $('#user-email').val();
+      var userPassword = $('#user-password').val();
+
+      // Construir el objeto con los datos del formulario
+      var formData = {
+          Name: userName,
+          Lastname: userLastname,
+          StudentId: userStudentId,
+          Career: userCareer,
+          Area: userArea,
+          Email: userEmail,
+          Password: userPassword
+      };
+
+      signup(formData);
+      loadPartialView('login', document.querySelector('.page'))
+  } else {
+    // Handle empty email or password inputs
+  }
+}
+

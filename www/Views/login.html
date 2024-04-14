@@ -14,12 +14,12 @@ data-sidebar-position="fixed" data-header-position="fixed">
               <div id = "login">
               <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Email</label>
-                  <input for="cg_user_login" class="form-control " placeholder="Mail@example.com" type="text" name="email" id="email" class="input" value="" size="32" aria-describedby="emailHelp">
+                  <input for="cg_user_login" class="form-control" id="user-email" placeholder="Mail@example.com" type="text" name="email" id="email" class="input" value="" size="32" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3" style="margin-top: 20px;">
                   <label for="exampleInputPassword1" class="form-label">Password</label>
                   <div class="mb-3 input-group">
-                    <input for="cg_user_pass" type="password" class="form-control" placeholder="Password" name="password" id="password" class="input" value="" size="32">
+                    <input for="cg_user_pass" type="password" class="form-control" id="user-password" placeholder="Password" name="password" id="password" class="input" value="" size="32">
                     <button type="button" onclick="togglePassword()" class="btn btn-secondary">
                       <i class="bi bi-eye" style="font-weight: bolder; color: black"></i>
                     </button>
@@ -27,9 +27,9 @@ data-sidebar-position="fixed" data-header-position="fixed">
                 </div>
               </div>
               <div class="submit" class="mb-3">
-              </div>                                  
+              </div>
+              <button class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2 btn-login-form button Successful" type="button" name="login" style="margin-top:20px;">Login</button>                                  
             </form>
-            <button class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2" type="submit" name="login" class="button Successful" style="margin-top:20px;" onclick="ToPrincipal()">Login</button>
 
             <p>Don't have an account? <a  id="signup" class="text-primary fw-bold ms-2" class="font-bold" data-testid="login-signup-link" href="#">Sign up</a></p>
         </div>
@@ -45,4 +45,19 @@ data-sidebar-position="fixed" data-header-position="fixed">
         loadPartialView('signup', document.querySelector('.page'))
     });
 });
+</script>
+<script>
+  document.querySelector('.btn-login-form').addEventListener('click', function () {
+      // Capturar los valores del formulario
+      var userEmail = $('#user-email').val();
+      var userPassword = $('#user-password').val();
+
+      // Construir el objeto con los datos del formulario
+      var formData = {
+          Email: userEmail,
+          Password: userPassword
+      };
+
+      login(formData);
+  });
 </script>

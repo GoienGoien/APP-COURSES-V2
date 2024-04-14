@@ -15,29 +15,42 @@
                   <!-- One "tab" for each step in the form: -->
                   <div class="tab">
                     <label for="" class="form-label">Student</label>
-                    <p><input placeholder="First name..." oninput="this.className = ''" name="fname" class="form-control"></p>
-                    <p><input placeholder="Last name" oninput="this.className = ''" name="lname" class="form-control"></p>
+                    <p><input id="user-name" placeholder="First name..." oninput="this.className = ''" name="fname" class="form-control"></p>
+                    <p><input id="user-lastname" placeholder="Last name" oninput="this.className = ''" name="lname" class="form-control"></p>
                   </div>
                   <div class="tab">
                     <label for="" class="form-label">Student Information</label>
-                    <p><input placeholder="Student ID" oninput="this.className = ''" name="email" class="form-control"></p>
-                    <p><select class="form-select" aria-label="Default select example">
-                      <option selected value="">--Carreer--</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
+                    <p><input id="user-studentId" placeholder="Student ID" oninput="validateStudentId(this)" = ''" name="studentid" class="form-control"></p>
+                    <p><select id="user-career" class="form-select" aria-label="Default select example">
+                      <option selected value="">--Career--</option>
+                      <option value="Administration">Administration</option>
+                      <option value="Industrial Maintenance">Industrial Maintenance</option>
+                      <option value="Mechatronics">Mechatronics</option>
+                      <option value="Renewable Energies">Renewable Energies</option>
+                      <option value="Industrial Processes and Operations">Industrial Processes and Operations</option>
+                      <option value="Information Technology">Information Technology</option>
+                      <option value="Logistics">Logistics</option>
                     </select></p>
-                    <p><select class="form-select" aria-label="Default select example">
+                    <p><select id="user-area" class="form-select" aria-label="Default select example">
                       <option selected value="">--Area--</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
+                      <option value="Quality and Energy Saving Area">Quality and Energy Saving Area</option>
+                      <option value="Flexible Manufacturing Area">Flexible Manufacturing Area</option>
+                      <option value="Automation Area">Automation Area</option>
+                      <option value="Industrial Area">Industrial Area</option>
+                      <option value="Petroleum Area">Petroleum Area</option>
+                      <option value="Heavy Machinery Area">Heavy Machinery Area</option>
+                      <option value="Plastics Area">Plastics Area</option>
+                      <option value="Manufacturing Area">Manufacturing Area</option>
+                      <option value="Multiplatform Software Development Area">Multiplatform Software Development Area</option>
+                      <option value="Virtual Environments and Digital Business Area">Virtual Environments and Digital Business Area</option>
+                      <option value="Project Formulation and Evaluation Area">Project Formulation and Evaluation Area</option>
+                      <option value="Human Capital Area">Human Capital Area</option>
                     </select></p>
                   </div>
                   <div class="tab">
                     <label for="" class="form-label">Email</label>
-                    <p><input placeholder="Email" oninput="this.className = ''" name="uname" class="form-control"></p>
-                    <p><input placeholder="Password" oninput="this.className = ''" name="pword" type="password" class="form-control"></p>
+                    <p><input id="user-email" placeholder="Email" oninput="this.className = ''" name="email" class="form-control"></p>
+                    <p><input id="user-password" placeholder="Password" oninput="this.className = ''" name="password" type="password" class="form-control"></p>
                   </div>
                   <!-- Circles which indicates the steps of the form: -->
                   <div style="text-align:center;margin-top:40px;">
@@ -45,13 +58,13 @@
                     <span class="step"></span>
                     <span class="step"></span>
                   </div>
-                </form>
-                <div style="overflow:auto;">
-                  <div style="float:right;">
-                    <button type="button" id="prevBtn" onclick="nextPrev(-1)" class=" btn btn-secondary">Previous</button>
-                    <button type="button" id="nextBtn" onclick="nextPrev(1)" class=" btn btn-primary">Next</button>
+                  <div style="overflow:auto;">
+                    <div style="float:right;">
+                      <button type="button" id="prevBtn" onclick="nextPrev(-1)" class=" btn btn-secondary">Previous</button>
+                      <button type="button" id="nextBtn" onclick="nextPrev(1)" class=" btn btn-primary">Next</button>
+                    </div>
                   </div>
-                </div>
+                </form>
                 <p >Do you have an account?<a id="loginlink" class="text-primary fw-bold ms-2" href="#">Login</a> </p>
             </div>
               </div>
@@ -66,7 +79,7 @@
       $('#loginlink').on('click', function(event) {
           event.preventDefault(); // Evitar la acción predeterminada del enlace
           loadPartialView('login', document.querySelector('.page'))
-      });
+      }); 
   });
   </script>
   <script src="public/js/signup.js"></script>
@@ -78,3 +91,5 @@
       });
   });
   </script>
+
+  
